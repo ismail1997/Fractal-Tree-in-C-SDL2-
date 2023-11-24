@@ -1,5 +1,8 @@
 # Fractal Tree in C using SDL2
 
+![Fractal Tree](fractal_tree.png)
+
+
 This is a simple C program that uses the SDL2 library to create a window and draw a fractal tree. The tree is drawn recursively, creating branches at each level.
 
 ## Requirements
@@ -16,3 +19,6 @@ make
 ### Run
 ```bash 
 make run
+```
+
+

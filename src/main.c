@@ -2,6 +2,12 @@
 #include<stdio.h>
 #include<SDL2/SDL.h>
 #include<stdbool.h>
+
+
+#define WINDOW_WIDTH 800
+#define WINDOW_HEIGHT 800
+
+
 void drawFractal(SDL_Renderer **renderer,int startX,int startY,int length, double angle,int depth);
 int main(int argc,char**argv)
 {
@@ -13,7 +19,7 @@ int main(int argc,char**argv)
         fprintf(stderr,"error init sdl : %s\n",SDL_GetError());
         exit(1);
     }
-    window = SDL_CreateWindow("fractal",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,400,400,SDL_WINDOW_SHOWN);
+    window = SDL_CreateWindow("fractal",SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,WINDOW_WIDTH,WINDOW_HEIGHT,SDL_WINDOW_SHOWN);
     if(window==NULL)
     {
         fprintf(stderr,"error create sdl :%s\n",SDL_GetError());
@@ -44,15 +50,15 @@ int main(int argc,char**argv)
             }
         }
 
-        SDL_SetRenderDrawColor(renderer,34,43,54,255);
+       SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
         SDL_RenderClear(renderer);
 
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        
 
          // Draw a line from (100, 100) to (400, 300)
-        int startX = 200;
-        int startY = 400;
-        int length = 100;
+        int startX = WINDOW_WIDTH/2;
+        int startY = WINDOW_HEIGHT;
+        int length = 200;
         double angle = 0.0;
         int depth = 10;
 
@@ -72,7 +78,7 @@ int main(int argc,char**argv)
 
 void drawFractal(SDL_Renderer **renderer,int startX,int startY,int length, double angle,int depth)
 {
-    SDL_SetRenderDrawColor(*renderer, 125, 55,125, 255);
+    SDL_SetRenderDrawColor(*renderer, 242, 111,40, 255);
     if(depth == 0){
         return ;
     }
