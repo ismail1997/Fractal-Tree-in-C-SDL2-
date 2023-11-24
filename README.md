@@ -11,7 +11,7 @@ Make sure you have the SDL2 library installed on your system. You can install it
 ### Compilation
 ```bash
 make
-
+````
 
 ### Run
 ```bash 
